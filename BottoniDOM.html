@@ -1,0 +1,175 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <title>Bottoni</title>
+    <style>
+       
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            
+            margin-bottom: 10px;
+        }
+
+        
+        .button-item {
+            display: flex;
+            align-items: center; 
+            margin-bottom: 10px;
+        }
+        img{
+        width: 10%; 
+        margin-left: 10px;        
+        }
+        .mn{
+            display: none;
+
+        }
+        p {
+            margin-left: 10px; 
+            
+        }
+    </style>
+</head>
+<body>
+
+<script>
+
+ function BtnStampa(){
+    let btnStampa = document.getElementById("stampa");
+    btnStampa.textContent="Hello World!";
+ }
+
+
+ function BtnTesto(){
+    let btnTesto = document.getElementById("testo");
+    btnTesto.textContent="E' sempre qui prof, non ci credo!!!! ";
+ }
+ 
+
+ function BtnPeekABoo(){
+    let btnPeekABoo=document.getElementById("boo");
+    btnPeekABoo.classList.toggle("mn");
+ }
+
+
+ let n=0;
+ function BtnClick(){
+ let btnClick = document.getElementById("click");
+ n++
+ btnClick.textContent="Numero di volte in cui mi hai cliccato: " +n;
+ }
+
+
+ function BtnImmagine(){
+ let btnImmagine=document.getElementById("immagine")
+ btnImmagine.src="elden_ring_radagon_2.png"
+ }
+
+
+ let ContatoreClick = 0;  
+ function BtnStile() {
+
+    ContatoreClick++; 
+
+    let stileTesto = document.getElementById('stile'); 
+
+    switch (ContatoreClick) {
+        case 1:
+        stileTesto.style.color = 'red';
+        stileTesto.style.backgroundColor = 'yellow';
+        stileTesto.style.border = '1px solid black';
+            break;
+        case 2:
+        stileTesto.style.color = 'yellow';
+        stileTesto.style.backgroundColor = 'blue';
+        stileTesto.style.border = '2px double black';
+            break;
+        case 3:
+        stileTesto.style.color = 'blue';
+        stileTesto.style.backgroundColor = 'green';
+        stileTesto.style.border = '3px dashed black';
+            break;
+        case 4:
+        stileTesto.style.color = 'green';
+        stileTesto.style.backgroundColor = 'violet';
+        stileTesto.style.border = '4px dotted black';
+            break;
+        case 5:
+        stileTesto.style.color = '';
+        stileTesto.style.backgroundColor = '';
+        stileTesto.style.border = '';
+        ContatoreClick = 0;  
+            break;
+    }
+
+ }
+
+
+ function BtnSfondo(){  
+ const R = Math.floor(Math.random() * 256);
+ const G = Math.floor(Math.random() * 256);
+ const B = Math.floor(Math.random() * 256);
+ document.body.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+ }
+
+
+ function BtnRipristino(){
+    location.reload()
+ }
+
+
+</script>
+
+<div class="button-container">
+
+
+    <div class="button-item">
+        <button onclick="BtnStampa()"> Stampa Hello World </button>
+        <p id="stampa"></p>
+    </div>
+
+
+    <div class="button-item">
+        <button onclick="BtnTesto()"> Aggiungi testo </button>
+        <p id="testo"></p>
+    </div>
+
+
+    <div class="button-item">
+        <button onclick="BtnPeekABoo()"> Mostra/Nascondi </button>
+        <p id="boo">Ora mi vedi! Se clicchi sul bottone, scompaio!</p>
+    </div>
+
+    
+    <div class="button-item">
+        <button onclick="BtnClick()"> Conta click </button>
+        <p id="click">Numero di volte in cui mi hai cliccato:</p>
+    </div>
+
+
+    <div class="button-item">
+        <button onclick="BtnImmagine()"> Cambia immagine </button>
+        <img id="immagine" src="elden-ring-radagon.avif">
+    </div>
+
+
+    <div class="button-item">
+        <button onclick="BtnStile()"> Cambia stile </button>
+        <p id="stile">IPatrick</p>
+    </div>
+
+
+    <div class="button-item">
+        <button onclick="BtnSfondo()"> Cambia sfondo </button>    
+    </div>
+
+
+    <div class="button-item">
+        <button onclick="BtnRipristino()"> Ripristino </button>
+    </div>
+    
+</div>
+
+</body>
+</html>
